@@ -1,0 +1,25 @@
+{
+  "name": "chowmate",
+  "version": "1.0.0",
+  "description": "Food Delivery App",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivekmehto/ChowMate.git"
+  },
+  "author": "Vivek Mehto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivekmehto/ChowMate/issues"
+  },
+  "homepage": "https://github.com/vivekmehto/ChowMate#readme",
+  "dependencies": {
+    "parcel": "^2.15.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
