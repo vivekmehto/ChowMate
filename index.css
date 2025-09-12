@@ -1,2 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f0f0f0;
+  align-items: center;
+  height: 100px;
+}
 
+.navbar > ul {
+  display: flex;
+}
 
+li {
+  list-style: none;
+  margin: 0 4px;
+}
