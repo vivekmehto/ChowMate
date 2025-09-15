@@ -23,7 +23,6 @@ li {
 }
 
 .restaurant-card {
-  /* m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200 */
   margin: 4px;
   padding: 4px;
   width: 250px;
@@ -37,10 +36,35 @@ li {
 
 .res-img {
   width: 250px;
-  /* height: 100px; */
 }
 
 .res-name {
   font-size: larger;
   font-weight: bold;
+}
+
+.shimmer-restaurant-card {
+  margin: 4px;
+  padding: 4px;
+  width: 250px;
+  height: 300px;
+  background-color: gainsboro;
+}
+
+.shimmer-res-img {
+  width: 250px;
+  height: 200px;
+  background-color: gray;
+}
+
+.shimmer-res-name {
+  width: 90%;
+  margin: 10px 0;
+  height: 10px;
+  background-color: gray;
+}
+
+.shimmer-body {
+  display: flex;
+  flex-wrap: wrap;
 }
