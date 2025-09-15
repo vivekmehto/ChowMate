@@ -14,3 +14,33 @@ li {
   list-style: none;
   margin: 0 4px;
 }
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.restaurant-card {
+  /* m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200 */
+  margin: 4px;
+  padding: 4px;
+  width: 250px;
+  background-color: gainsboro;
+}
+
+.restaurant-card:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.res-img {
+  width: 250px;
+  /* height: 100px; */
+}
+
+.res-name {
+  font-size: larger;
+  font-weight: bold;
+}
