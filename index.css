@@ -1,25 +1,75 @@
-.header {
-  display: flex;
-  justify-content: space-around;
-  background-color: #f0f0f0;
-  align-items: center;
-  height: 100px;
+/* Box Model Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+  margin: 0;
+  padding: 0;
 }
 
-.navbar > ul {
-  display: flex;
+/* Base Body Styles */
+body {
+  font-family: Arial, sans-serif; /* Common fallback font stack */
+  line-height: 1.5; /* Improves readability */
+  color: #333; /* Default text color */
 }
 
-li {
-  list-style: none;
-  margin: 0 4px;
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents extra space below images */
 }
 
+/* Link Styling */
+a {
+  text-decoration: none; /* Removes default underline */
+  color: blue; /* Sets a default link color */
+}
 .body {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
+}
+
+.header {
+  background-color: #111827; /* dark navy */
+  color: #f9fafb;
+  padding: 15px 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #fbbf24; /* amber accent */
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f9fafb;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #fbbf24;
 }
 
 .restaurant-card {

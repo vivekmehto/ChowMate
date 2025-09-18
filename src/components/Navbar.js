@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Navbar = () => {
   const [loginBtn, setloginBtn] = useState("Login");
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
           {loginBtn}
         </button>
       </ul>
-    </div>
+    </nav>
   );
 };
 

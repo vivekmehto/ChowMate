@@ -1,17 +1,19 @@
 import Navbar from "./Navbar";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          src="https://lh3.googleusercontent.com/ogw/AF2bZyhAvgNxU_eGA63KFq40aAu0_zKa5pzDGoamzhPWvzGhGg=s32-c-mo"
-          className="logo-img"
-          alt="chowmate logo"
-        />
+    <header className="header">
+      <div className="header-container">
+        <div className="logo">
+          <Link to="/">
+            <h1>ChowMate 🍲♟️</h1>
+          </Link>
+        </div>
+
+        <Navbar />
       </div>
-      <Navbar />
-    </div>
+    </header>
   );
 };
 
