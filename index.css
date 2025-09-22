@@ -172,3 +172,67 @@ a {
   border-top: 1px solid #374151;
   padding-top: 15px;
 }
+.restaurant-menu {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.restaurant-details {
+  flex: 1;
+}
+
+.restaurant-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.restaurant-cuisines {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.menu-title {
+  margin-top: 20px;
+  font-size: 20px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.menu-item {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.02);
+  background: #f3f4f6;
+}
