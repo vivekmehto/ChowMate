@@ -1,7 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ info }) => {
-  console.log("here is res data " + info);
   const { name, avgRating, cuisines, costForTwo, sla, cloudinaryImageId } =
     info;
 
@@ -13,11 +12,10 @@ const RestaurantCard = ({ info }) => {
         src={CDN_URL + cloudinaryImageId}
       />
       <h3 className="res-name">{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
+      <h4>{cuisines?.join(", ") || "Cuisines not available"}</h4>
+      <h4>{avgRating} ★</h4>
       <h4>{costForTwo}</h4>
-      <h4>{sla.slaString} </h4>
-      {/* <h4>User : {loggedInUser} </h4> */}
+      <h4>{sla?.slaString || "Delivery info unavailable"}</h4>
     </div>
   );
 };
