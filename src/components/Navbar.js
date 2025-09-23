@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Navbar = () => {
   const [loginBtn, setloginBtn] = useState("Login");
+  const onlineStatus = useOnlineStatus();
   return (
     <nav className="navbar">
       <ul>
+        <li>Online Status : {onlineStatus === true ? "🟢" : "🔴"}</li>
         <li>
           <Link to="/">Home</Link>
         </li>
