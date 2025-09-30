@@ -1,25 +1,34 @@
 import { Link } from "react-router";
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         {/* Brand / Logo */}
         <div className="footer-logo">
-          <h2>ChowMate 🍲♟️</h2>
+          <Link to="/">
+            <h2>ChowMate 🍲♟️</h2>
+          </Link>
           <p>Your smart food delivery partner</p>
         </div>
 
         {/* Links */}
         <div className="footer-links">
-          <Link href="/about">About Us</Link>
-          <Link href="/contact">Contact</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
         {/* Social Media */}
         <div className="footer-social">
-          <Link href="https://facebook.com">Facebook</Link>
-          <Link href="https://instagram.com">Instagram</Link>
-          <Link href="https://twitter.com">Twitter</Link>
+          <a href="https://facebook.com" target="_blank">
+            Facebook
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            Instagram
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            Twitter
+          </a>
         </div>
       </div>
 
