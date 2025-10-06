@@ -6,26 +6,56 @@ const Navbar = () => {
   const [loginBtn, setloginBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <nav className="navbar">
-      <ul>
-        <li>Online Status : {onlineStatus === true ? "🟢" : "🔴"}</li>
+    <nav>
+      <ul className="flex gap-5 items-center">
         <li>
-          <Link to="/">Home</Link>
+          Online Status:{" "}
+          <span className={onlineStatus ? "text-green-500" : "text-red-500"}>
+            {onlineStatus ? "🟢" : "🔴"}
+          </span>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link
+            className="hover:text-amber-400 transition-colors duration-300"
+            to="/"
+          >
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link
+            className="hover:text-amber-400 transition-colors duration-300"
+            to="/about"
+          >
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link
+            className="hover:text-amber-400 transition-colors duration-300"
+            to="/contact"
+          >
+            Contact
+          </Link>
         </li>
         <li>
-          <Link to="/grocery">Grocery</Link>
+          <Link
+            className="hover:text-amber-400 transition-colors duration-300"
+            to="/cart"
+          >
+            Cart
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="hover:text-amber-400 transition-colors duration-300"
+            to="/grocery"
+          >
+            Grocery
+          </Link>
         </li>
         <button
-          className="login-btn"
+          className="ml-4 px-4 py-1 bg-amber-400 text-gray-900 font-semibold rounded-md hover:bg-amber-500 transition-colors duration-300"
           onClick={() => {
             loginBtn === "Login" ? setloginBtn("Logout") : setloginBtn("Login");
           }}
