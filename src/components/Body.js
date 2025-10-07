@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RestaurantCard, { promotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import { RES_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -32,6 +33,8 @@ const Body = () => {
     );
   };
 
+  const { userName, setuserName } = useContext(UserContext);
+
   if (onlineStatus === false)
     return (
       <h1 className="text-center text-red-500 mt-10 text-lg font-semibold">
@@ -41,21 +44,31 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="flex flex-wrap justify-center">
-      {listOfRestaurants.map((res) => (
-        <Link
-          key={res.info.id}
-          to={"/restaurants/" + res.info.id}
-          className="m-4"
-        >
-          {" "}
-          {res?.info?.promoted ? (
-            <RestaurantCardPromoted {...res} />
-          ) : (
-            <RestaurantCard {...res} />
-          )}
-        </Link>
-      ))}
+    <div>
+      <div className="  m-4 p-4 flex items-center justify-center">
+        <label> User Name: </label>
+        <input
+          className="border border-black p-2"
+          value={userName}
+          onChange={(e) => setuserName(e.target.value)}
+        />
+      </div>
+      <div className="flex flex-wrap justify-center">
+        {listOfRestaurants.map((res) => (
+          <Link
+            key={res.info.id}
+            to={"/restaurants/" + res.info.id}
+            className="m-4"
+          >
+            {" "}
+            {res?.info?.promoted ? (
+              <RestaurantCardPromoted {...res} />
+            ) : (
+              <RestaurantCard {...res} />
+            )}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

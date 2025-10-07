@@ -8,16 +8,20 @@ import Footer from "./components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
+import UserContext from "./utils/UserContext";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
+  const [userName, setuserName] = useState("Vivek Mehto");
   return (
     <div className="app">
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider value={{ userName, setuserName }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </div>
   );
 };
