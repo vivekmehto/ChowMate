@@ -33,14 +33,21 @@ const Body = () => {
   };
 
   if (onlineStatus === false)
-    return <h1>You are offline. Check your internet connection</h1>;
-
+    return (
+      <h1 className="text-center text-red-500 mt-10 text-lg font-semibold">
+        You are offline. Check your internet connection
+      </h1>
+    );
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="flex flex-wrap justify-center">
       {listOfRestaurants.map((res) => (
-        <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
+        <Link
+          key={res.info.id}
+          to={"/restaurants/" + res.info.id}
+          className="m-4"
+        >
           {" "}
           {res?.info?.promoted ? (
             <RestaurantCardPromoted {...res} />
