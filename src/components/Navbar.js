@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [loginBtn, setloginBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <nav>
       <ul className="flex gap-5 items-center">
@@ -43,7 +47,7 @@ const Navbar = () => {
             className="hover:text-amber-400 transition-colors duration-300"
             to="/cart"
           >
-            Cart
+            Cart {cartItems.length}
           </Link>
         </li>
         <li>
