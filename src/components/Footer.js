@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-100 mt-12 px-6 py-10">
+    <footer className="bg-gray-900 text-gray-100 mt-1 px-6 py-10">
       <div className="max-w-6xl mx-auto flex flex-wrap justify-between gap-8">
         {/* Brand / Logo */}
         <div>
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media */}
-        <div className="footer-social">
+        <div className="flex gap-2">
           <a
             className="text-gray-300 text-sm hover:text-amber-400 transition"
             href="https://facebook.com"
@@ -61,6 +61,18 @@ const Footer = () => {
       <div className="text-center border-t border-gray-700 mt-8 pt-4">
         <p className="text-xs text-gray-400">
           © {new Date().getFullYear()} ChowMate. All rights reserved.
+        </p>
+        <p className="text-sm">
+          Made with <span className="text-red-500">❤️</span> by{" "}
+          <span className="font-semibold text-white">
+            <a
+              className="text-gray-300 text-sm hover:text-amber-400 transition"
+              href="https://www.instagram.com/vivekmehto/"
+              target="_blank"
+            >
+              Vivek Mehto
+            </a>
+          </span>
         </p>
       </div>
     </footer>
