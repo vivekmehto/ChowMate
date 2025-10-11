@@ -20,3 +20,5 @@ const useRestaurantMenu = (resId) => {
 
   return { resInfo, error };
 };
+
+export default useRestaurantMenu;
