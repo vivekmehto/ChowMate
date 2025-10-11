@@ -1,0 +1,8 @@
+[build]
+  publish = "dist"             # or "build" if you use Create React App
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
