@@ -1,33 +1,35 @@
 import { useEffect, useState } from "react";
+import { MENU_API } from "./constants";
 
 const useRestaurantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        // Call Netlify function
-        const response = await fetch(
-          `/.netlify/functions/fetchMenu?restaurantId=${resId}`
+        const data = await fetch(MENU_API + resId);
+        const json = await data.json();
+
+        console.log(
+          "Restaurant Info:",
+          json.data?.cards?.[2]?.card?.card?.info
+        );
+        console.log(
+          "First Menu Item:",
+          json.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
+            ?.card?.card?.itemCards?.[0]?.card?.info
         );
 
-        if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
-
-        const json = await response.json();
         setResInfo(json.data);
-        setError(null);
-      } catch (err) {
-        console.error("❌ Error fetching restaurant menu:", err);
-        setError(err.message);
-        setResInfo(null);
+      } catch (error) {
+        console.error("Error fetching restaurant menu:", error);
       }
     };
 
     fetchMenu();
   }, [resId]);
 
-  return { resInfo, error };
+  return resInfo;
 };
 
 export default useRestaurantMenu;
