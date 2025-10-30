@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import defaultImage from "../assets/default-restaurantImage.avif";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -44,7 +45,6 @@ const RestaurantMenu = () => {
     ) || [];
 
   console.log(categories);
-
   return (
     <div className="max-w-3xl mx-auto my-8 p-6 bg-gray-50 rounded-xl shadow-md text-center">
       {/* Restaurant Info */}
@@ -52,8 +52,15 @@ const RestaurantMenu = () => {
         <img
           className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg object-cover shadow-md"
           alt={name}
-          src={CDN_URL + cloudinaryImageId}
-        />
+           src={
+    cloudinaryImageId &&
+    !cloudinaryImageId.includes("rng/md/carousel/production/")
+      ? CDN_URL + cloudinaryImageId
+      : defaultImage
+      
+  }
+  onError={(e) => (e.target.src = defaultImage)}
+       />
         <div className="text-left">
           <h2 className="text-2xl font-semibold text-gray-800">{name}</h2>
           {cuisines?.length > 0 && (
