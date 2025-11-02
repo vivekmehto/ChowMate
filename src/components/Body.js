@@ -22,15 +22,20 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    // console.log(json);
 
-    setListOfRestaurants(
-      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    const newRestaurants =
+      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || [];
 
-    console.log(
-      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    newRestaurants[3].info.cloudinaryImageId =
+      "27a03c452c983d1b90f36faa2cbc0b0a";
+
+    setListOfRestaurants(newRestaurants);
+
+    // console.log(
+    //   json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
   };
 
   const { userName, setuserName } = useContext(UserContext);

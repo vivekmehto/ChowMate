@@ -33,10 +33,6 @@ const RestaurantMenu = () => {
   const menuCards =
     resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
 
-  const itemCards =
-    menuCards.find((c) => c?.card?.card?.itemCards)?.card?.card?.itemCards ||
-    [];
-
   const categories =
     menuCards.filter(
       (c) =>
@@ -52,15 +48,14 @@ const RestaurantMenu = () => {
         <img
           className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg object-cover shadow-md"
           alt={name}
-           src={
-    cloudinaryImageId &&
-    !cloudinaryImageId.includes("rng/md/carousel/production/")
-      ? CDN_URL + cloudinaryImageId
-      : defaultImage
-      
-  }
-  onError={(e) => (e.target.src = defaultImage)}
-       />
+          src={
+            cloudinaryImageId &&
+            !cloudinaryImageId.includes("rng/md/carousel/production/")
+              ? CDN_URL + cloudinaryImageId
+              : defaultImage
+          }
+          onError={(e) => (e.target.src = defaultImage)}
+        />
         <div className="text-left">
           <h2 className="text-2xl font-semibold text-gray-800">{name}</h2>
           {cuisines?.length > 0 && (

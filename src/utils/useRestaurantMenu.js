@@ -10,15 +10,14 @@ const useRestaurantMenu = (resId) => {
         const data = await fetch(MENU_API + resId);
         const json = await data.json();
 
-        console.log(
-          "Restaurant Info:",
-          json.data?.cards?.[2]?.card?.card?.info
-        );
-        console.log(
-          "First Menu Item:",
-          json.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
-            ?.card?.card?.itemCards?.[0]?.card?.info
-        );
+        // console.log(
+        //   "Restaurant Info:",
+        //   json.data?.cards?.[2]?.card?.card?.info
+        // );
+        // console.log(
+        //   "First Menu Item:",
+        //   json.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards?.[0]?.card?.info
+        // );
 
         setResInfo(json.data);
       } catch (error) {
