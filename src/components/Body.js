@@ -191,7 +191,6 @@ const Body = () => {
                     </div>
                   )}
 
-                  {/* keep your RestaurantCard component as-is; container gives a subtle card feel */}
                   <div className="bg-white rounded-2xl shadow-sm hover:shadow-md overflow-hidden">
                     <RestaurantCard {...res} />
                   </div>
